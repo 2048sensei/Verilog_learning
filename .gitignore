@@ -1,0 +1,29 @@
+# 依赖与构建产物
+node_modules/
+dist/
+.vite/
+*.tsbuildinfo
+
+# 共享 Live2D 资源（体积大、授权独立，不随仓库分发）
+_shared/
+public/live2d-models/
+
+# 本地开发工具产物
+.claude/
+.playwright-mcp/
+.spec-workflow/
+playwright-report/
+test-results/
+coverage/
+
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+
+# 日志
+*.log
+npm-debug.log*

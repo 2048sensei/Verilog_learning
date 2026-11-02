@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Prism.js 深色主题（基于 Tomorrow Night） ===== */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #e2e8f0;
+  background: none;
+  font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+  font-size: 0.875rem;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.6;
+  tab-size: 4;
+  hyphens: none;
+}
+
+pre[class*="language-"] {
+  padding: 1.25rem;
+  margin: 0;
+  overflow: auto;
+  border-radius: 0.5rem;
+  background: #0c1222 !important;
+  border: 1px solid #1e3a5f;
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata { color: #546e7a; }
+
+.token.punctuation { color: #89ddff; }
+
+.token.tag,
+.token.attr-name,
+.token.namespace,
+.token.deleted { color: #f07178; }
+
+.token.function-name { color: #82aaff; }
+
+.token.boolean,
+.token.number,
+.token.function { color: #ffcb6b; }
+
+.token.property,
+.token.class-name,
+.token.constant,
+.token.symbol { color: #ffcb6b; }
+
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin { color: #c792ea; }
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.variable { color: #c3e88d; }
+
+.token.operator,
+.token.entity,
+.token.url { color: #89ddff; }
+
+.token.important,
+.token.bold { font-weight: 600; }
+.token.italic { font-style: italic; }
+
+.token.inserted { color: #c3e88d; }
+
+/* ===== 全局样式 ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Noto Sans SC', system-ui, -apple-system, sans-serif;
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* 选中文本颜色 */
+::selection {
+  background: rgba(56, 189, 248, 0.3);
+  color: #f1f5f9;
+}
+
+/* ===== 课程内容排版 ===== */
+.lesson-content h2 {
+  @apply text-2xl font-bold text-slate-100 mt-8 mb-4 pb-2 border-b border-slate-700;
+}
+.lesson-content h3 {
+  @apply text-xl font-semibold text-slate-200 mt-6 mb-3;
+}
+.lesson-content h4 {
+  @apply text-lg font-medium text-slate-300 mt-4 mb-2;
+}
+.lesson-content p {
+  @apply text-slate-300 leading-relaxed mb-4;
+}
+.lesson-content ul,
+.lesson-content ol {
+  @apply text-slate-300 mb-4 pl-6 space-y-1;
+}
+.lesson-content ul { @apply list-disc; }
+.lesson-content ol { @apply list-decimal; }
+.lesson-content li { @apply leading-relaxed; }
+.lesson-content strong {
+  @apply text-slate-100 font-semibold;
+}
+.lesson-content code {
+  @apply bg-slate-800 text-sky-300 px-1.5 py-0.5 rounded text-sm font-mono;
+}
+.lesson-content blockquote {
+  @apply border-l-4 border-sky-500 bg-slate-800/50 px-4 py-3 my-4 rounded-r text-slate-300 italic;
+}
+.lesson-content table {
+  @apply w-full border-collapse mb-4 text-sm;
+}
+.lesson-content th {
+  @apply bg-slate-800 text-slate-200 px-4 py-2 text-left font-semibold border border-slate-600;
+}
+.lesson-content td {
+  @apply text-slate-300 px-4 py-2 border border-slate-700;
+}
+.lesson-content tr:hover td {
+  @apply bg-slate-800/50;
+}
+
+/* 提示框 */
+.info-box {
+  @apply border rounded-lg px-4 py-3 my-4 text-sm;
+}
+.info-box.tip {
+  @apply border-sky-500/30 bg-sky-500/10 text-sky-200;
+}
+.info-box.warning {
+  @apply border-amber-500/30 bg-amber-500/10 text-amber-200;
+}
+.info-box.danger {
+  @apply border-red-500/30 bg-red-500/10 text-red-200;
+}
+
+/* 关键术语 */
+.term {
+  @apply text-sky-400 font-semibold cursor-help border-b border-dotted border-sky-500/50;
+}
+
+/* 动画 */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
